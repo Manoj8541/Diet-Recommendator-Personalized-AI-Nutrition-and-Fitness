@@ -1,0 +1,94 @@
+================================================================================
+                    🥗 DIET RECOMMENDATOR — SETUP & RUN GUIDE
+================================================================================
+
+Thank you for downloading Diet Recommendator!
+This guide explains how to unzip, set up, and run the application on any Windows PC.
+
+--------------------------------------------------------------------------------
+📌 PREREQUISITES (Must be installed on your computer)
+--------------------------------------------------------------------------------
+1. Python (version 3.10, 3.11, or 3.12)
+   - Download free from: https://www.python.org/downloads/
+   - ⚠️ IMPORTANT: During Python installation, make sure to check the box
+     "Add Python to PATH" (or "Add python.exe to PATH").
+
+2. Node.js (LTS version)
+   - Download free from: https://nodejs.org/
+   - Follow standard installer prompts.
+
+--------------------------------------------------------------------------------
+🚀 OPTION 1: ONE-CLICK AUTOMATIC LAUNCH (RECOMMENDED)
+--------------------------------------------------------------------------------
+1. Extract / Unzip the downloaded ZIP file to any folder on your computer.
+2. Open the unzipped folder ("Diet Recommendator").
+3. Double-click on:
+   
+       RUN_APP.bat
+
+4. What happens automatically:
+   - It checks for Python and Node.js.
+   - It installs all required Python and Node libraries automatically.
+   - It starts both the Backend server and Frontend server.
+   - It automatically opens your web browser to:
+     http://localhost:5173
+5. You can now use the application immediately!
+
+--------------------------------------------------------------------------------
+🛠️ OPTION 2: MANUAL LAUNCH (STEP-BY-STEP TERMINAL)
+--------------------------------------------------------------------------------
+If you prefer running commands manually:
+
+Step 1: Start the Backend (Terminal 1)
+   1. Open Command Prompt (cmd) or PowerShell.
+   2. Navigate to the backend folder:
+      cd "path/to/Diet Recommendator/backend"
+   3. Install Python requirements:
+      pip install -r requirements.txt
+   4. Start FastAPI server:
+      python -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload
+
+Step 2: Start the Frontend (Terminal 2)
+   1. Open a second Command Prompt (cmd) or PowerShell.
+   2. Navigate to the frontend folder:
+      cd "path/to/Diet Recommendator/frontend"
+   3. Install npm packages (only needed first time):
+      npm install
+   4. Start Vite dev server:
+      npm run dev
+
+Step 3: Open in Browser
+   - Open your browser and go to:
+     http://localhost:5173
+
+--------------------------------------------------------------------------------
+🔑 GROQ API KEY CONFIGURATION (OPTIONAL / BACKUP)
+--------------------------------------------------------------------------------
+The backend is already pre-configured with a default working Groq API key in:
+    backend/.env
+
+If you want to use your own free Groq API key:
+1. Get a free key at: https://console.groq.com/keys
+2. Open the file "backend/.env" in Notepad.
+3. Replace the key with your own:
+   GROQ_API_KEY=gsk_your_api_key_here
+4. Save the file.
+
+--------------------------------------------------------------------------------
+🛑 HOW TO STOP THE APP
+--------------------------------------------------------------------------------
+- Simply close the two terminal windows titled:
+  1. "Diet Recommendator - Backend"
+  2. "Diet Recommendator - Frontend"
+
+--------------------------------------------------------------------------------
+❓ TROUBLESHOOTING
+--------------------------------------------------------------------------------
+• Port already in use:
+  If port 5173 or 8000 is occupied by another app, restart your PC or close
+  any other running node / python processes.
+• Python not recognized:
+  Re-run the Python installer, choose "Modify", and check "Add Python to environment variables".
+• Browser didn't open automatically:
+  Manually open your browser and navigate to: http://localhost:5173
+================================================================================
